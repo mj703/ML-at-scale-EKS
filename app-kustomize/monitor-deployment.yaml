@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: ml-monitor
+  name: ml-monitor
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ml-monitor
+  template:
+    metadata:
+      labels:
+        app: ml-monitor
+    spec:
+      containers:
+      - image: mj703/ml_monitoring:v1.0.0
+        name: ml-monitor
+        ports:
+        - containerPort: 8501
+        # resources:
+        #   requests:
+        #     cpu: 200m
+        #     memory: 200Mi
+        #   limits:
+        #     cpu: 200m
+        #     memory: 200Mi

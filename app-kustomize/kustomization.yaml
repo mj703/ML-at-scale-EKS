@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- bento-deployment.yaml
+- bento-service.yaml
+- monitor-deployment.yaml
+- monitor-service.yaml
+- streamlilt-deployment.yaml
+- streamlit-service.yaml
+images:
+- name: mj703/iris_classifier
+  newTag: v1.0.2

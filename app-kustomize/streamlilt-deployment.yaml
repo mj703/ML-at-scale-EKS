@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: streamlit-webapp
+  name: streamlit-webapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: streamlit-webapp
+  template:
+    metadata:
+      labels:
+        app: streamlit-webapp
+    spec:
+      containers:
+      - image: mj703/web_app:v1.0.0
+        name: streamlit-webapp
+        env:
+        - name: URL
+          value: my-bento-service.default.svc.cluster.local
+        ports:
+        - containerPort: 8501
+        # resources:
+        #   requests:
+        #     cpu: 200m
+        #     memory: 200Mi
+        #   limits:
+        #     cpu: 200m
+        #     memory: 200Mi

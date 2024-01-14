@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: my-bento
+  name: my-bento
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: my-bento
+  template:
+    metadata:
+      labels:
+        app: my-bento
+    spec:
+      containers:
+      - image: mj703/iris_classifier
+        name: my-bento
+        ports:
+        - name: http-metrics
+          containerPort: 3000
+        # resources:
+        #   requests:
+        #     cpu: 200m
+        #     memory: 200Mi
+        #   limits:
+        #     cpu: 200m
+        #     memory: 200Mi
