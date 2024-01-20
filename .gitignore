@@ -6,7 +6,7 @@ new.txt
 # C extensions
 *.so
 
-alert-config/    
+helm-values/   
 argo-manifest/  
 config-manifest/
 new.txt
