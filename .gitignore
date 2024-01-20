@@ -6,7 +6,8 @@ new.txt
 # C extensions
 *.so
 
-helm-values/   
+helm-values/  
+terraform/
 argo-manifest/  
 config-manifest/
 new.txt
