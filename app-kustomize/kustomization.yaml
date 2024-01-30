@@ -9,4 +9,4 @@ resources:
 - streamlit-service.yaml
 images:
 - name: mj703/iris_classifier
-  newTag: v1.0.3
+  newTag: v1.0.4
