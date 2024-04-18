@@ -7,7 +7,6 @@ new.txt
 *.so
 
 helm-values/  
-terraform/
 argo-manifest/  
 config-manifest/
 new.txt
