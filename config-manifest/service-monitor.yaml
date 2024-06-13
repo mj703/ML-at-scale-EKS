@@ -1,0 +1,14 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: mycustomservicemonitor
+  labels:
+    release: prometheus
+spec:
+  jobLabel: mybenotservice
+  selector:
+    matchLabels:
+      app: my-bento
+  endpoints: 
+    - interval: 5s
+      port: http-metrics 

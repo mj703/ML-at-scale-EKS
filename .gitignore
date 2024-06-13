@@ -2,15 +2,8 @@
 __pycache__/
 *.py[cod]
 *$py.class
-new.txt
 # C extensions
 *.so
-
-helm-values/  
-argo-manifest/  
-config-manifest/
-new.txt
-
 
 # Distribution / packaging
 .Python

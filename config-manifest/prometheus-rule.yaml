@@ -1,0 +1,21 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: bentoml-rules
+  labels:
+    release: prometheus
+spec:
+  groups:
+    - name: bentoml-error
+      rules:
+        - alert: HighErrorRate
+          expr: sum by(http_response_code) (bentoml_api_server_request_total{http_response_code="200", endpoint="http-metrics", exported_endpoint="/classify"}) > 5
+          for: 5s
+          labels:
+            severity: critical
+          annotations:
+            summary: "High bentoml api request"
+            description: "High bentoml api request detected in bentoml_ml model i.e greater than 5"
+
+
+
